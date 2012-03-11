@@ -1,3 +1,4 @@
+# WifiName API Documentation
 
 ## Authentication
 
@@ -34,7 +35,7 @@ $ curl -d "token=your_token" \
 -d "pinned_content[device_mac]=1" \
 -d "pinned_content[content_type]=facebook_url" \
 -d "pinned_content[content_value]=500" \
-http://wifiname.herokuapp.com/api/v1/pinned_contents.json
+http://app.wifiname.com/api/v1/pinned_contents.json
 ```
 
 ``` json
@@ -75,7 +76,7 @@ $ curl -X GET -d "token=your_token" \
 -d "ssid_mac_pairs[][ssid]=A" \
 -d "ssid_mac_pairs[][mac]=123" \
 -d "device_mac=2" \
-http://wifiname.herokuapp.com/api/v1/pinned_contents/by_ssid_and_mac.json
+http://app.wifiname.com/api/v1/pinned_contents/by_ssid_and_mac.json
 ```
 
 ``` json
@@ -168,7 +169,7 @@ $ curl -X GET -d "token=your_token" \
 -d "lat=40" \
 -d "long=80" \
 -d "device_mac=2" \
-http://wifiname.herokuapp.com/api/v1/pinned_contents/close_and_recent.json
+http://app.wifiname.com/api/v1/pinned_contents/close_and_recent.json
 ```
 
 ``` json
@@ -295,7 +296,7 @@ $ curl -X GET -d "token=your_token" \
 -d "lat=40" \
 -d "long=80" \
 -d "device_mac=2" \
-http://wifiname.herokuapp.com/api/v1/pin_targets.json
+http://app.wifiname.com/api/v1/pin_targets.json
 ```
 
 ``` json
