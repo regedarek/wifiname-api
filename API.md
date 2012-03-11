@@ -55,7 +55,98 @@ http://wifiname.herokuapp.com/api/v1/pinned_contents.json
 
 ### Retrieving Pinned Contents for SSIDs and MACs
 
+```
+/api/v1/pinned_contents/by_ssid_and_mac.json
+```
 
+You can retrieve Pinned Contents pinned by mobile devices to SSID & MAC
+combinations, or by web interface users to SSIDs with these attributes:
+
+* ``ssid_mac_pairs[][ssid]=A``: First SSID
+* ``ssid_mac_pairs[][mac]=B``: First MAC
+* ``ssid_mac_pairs[][ssid]=C``: Second SSID
+* ``ssid_mac_pairs[][mac]=D``: Second MAC
+* ``device_mac``: MAC of the device that's doing the request.
+
+#### Example
+
+``` bash
+$ curl -X GET -d "token=your_token" \
+-d "ssid_mac_pairs[][ssid]=A" \
+-d "ssid_mac_pairs[][mac]=123" \
+-d "device_mac=2" \
+http://wifiname.herokuapp.com/api/v1/pinned_contents/by_ssid_and_mac.json
+```
+
+``` json
+[
+  {
+    "content_type":"facebook_url",
+    "content_value":"500",
+    "created_at":"2012-03-11T18:09:59Z",
+    "device_mac":"1",
+    "id":1,
+    "lat":null,
+    "long":null,
+    "mac":"123",
+    "ssid":"A",
+    "updated_at":"2012-03-11T18:09:59Z",
+    "user_id":null
+  },
+  {
+    "content_type":"facebook_url",
+    "content_value":"500",
+    "created_at":"2012-03-11T18:26:44Z",
+    "device_mac":"1",
+    "id":2,
+    "lat":null,
+    "long":null,
+    "mac":"123",
+    "ssid":"A",
+    "updated_at":"2012-03-11T18:26:44Z",
+    "user_id":null
+  },
+  {
+    "content_type":"facebook_url",
+    "content_value":"500",
+    "created_at":"2012-03-11T18:27:48Z",
+    "device_mac":"1",
+    "id":3,
+    "lat":null,
+    "long":null,
+    "mac":"123",
+    "ssid":"A",
+    "updated_at":"2012-03-11T18:27:48Z",
+    "user_id":null
+  },
+  {
+    "content_type":"facebook_url",
+    "content_value":"500",
+    "created_at":"2012-03-11T18:27:48Z",
+    "device_mac":"1",
+    "id":4,
+    "lat":null,
+    "long":null,
+    "mac":"123",
+    "ssid":"A",
+    "updated_at":"2012-03-11T18:27:48Z",
+    "user_id":null
+  },
+  {
+    "content_type":"facebook_url",
+    "content_value":"500",
+    "created_at":"2012-03-11T18:27:49Z",
+    "device_mac":"1",
+    "id":5,
+    "lat":null,
+    "long":null,
+    "mac":"123",
+    "ssid":"A",
+    "updated_at":"2012-03-11T18:27:49Z",
+    "user_id":null
+  }
+]
+```
 
 ### Retrieving Pinned Contents for coordinates
 
@@ -64,11 +155,11 @@ http://wifiname.herokuapp.com/api/v1/pinned_contents.json
 ```
 
 You can retrieve the closest 20 pinned contents, plus the 20 most recent pins
-from anywhere in the world by posting these attributes:
+from anywhere in the world with these attributes:
 
 * ``lat``: Latitude of the requested position.
 * ``long``: Latitude of the requested position.
-* ``device_mac``: MAC of the device that's doing the pinning.
+* ``device_mac``: MAC of the device that's doing the request.
 
 #### Example
 
@@ -191,11 +282,11 @@ A *PinTarget* is an SSID & MAC combination that content has been pinned to.
 ```
 
 You can retrieve the 10 closest SSID and MAC combinations of the devices content has been
-pinned to by posting these attributes:
+pinned to with these attributes:
 
 * ``lat``: Latitude of the requested position.
 * ``long``: Latitude of the requested position.
-* ``device_mac``: MAC of the device that's doing the pinning.
+* ``device_mac``: MAC of the device that's doing the request.
 
 #### Example
 
