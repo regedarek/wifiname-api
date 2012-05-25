@@ -18,7 +18,7 @@ A successful authentication request will return a hash with the user's account i
 
 ```json
 {
-  "user": {
+  "mobile_user": {
     "email": "test@test.com",
     "username": "test",
     "password": "testtest",
@@ -70,7 +70,7 @@ POST /api/v1/mobile_users/sign_in.json
 #### Parameters
 ```json
 {
-  "user":{
+  "mobile_user":{
     "username":"test",
     "password":"testtest"
   },
@@ -125,7 +125,7 @@ DELETE /api/v1/mobile_users/sign_out.json
 #### Parameters
 ```json
 {
-  "user":{
+  "mobile_user":{
     "username":"test",
   },
   "token":"authtoken"
