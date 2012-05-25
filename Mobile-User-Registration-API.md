@@ -49,3 +49,6 @@ HTTP/1.1 422 Unprocessable Entity
   ]
 }
 ```
+
+## Log In an Existing User
+
