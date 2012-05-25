@@ -100,3 +100,16 @@ Connection: close
   "email":"test@test.com"
 }
 ```
+
+#### Unsuccessful Request
+
+```
+HTTP/1.1 401 Unauthorized
+```
+
+```json
+{
+  "success":false,
+  "message":"Error with your login or password"
+}
+```
