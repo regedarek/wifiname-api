@@ -51,4 +51,40 @@ HTTP/1.1 422 Unprocessable Entity
 ```
 
 ## Log In an Existing User
+```
+POST /api/v1/mobile_users/sign_in.json
+```
 
+#### Parameters
+```json
+{
+  "mobile_user_login":{
+    "username":"test",
+    "password":"testtest"
+  },
+  "token":"authtoken"
+}
+```
+
+#### Successful Request
+
+```
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+X-UA-Compatible: IE=Edge
+Etag: "6b8099347fa80fd910f7545a30897171"
+Cache-Control: max-age=0, private, must-revalidate
+Set-Cookie: _wifiname_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTBjNTc5ZjNhZTRlNTRmNGY4MWYzM2ExYTUzYTY1MTM0BjsAVEkiIHdhcmRlbi51c2VyLm1vYmlsZV91c2VyLmtleQY7AFRbCEkiD01vYmlsZVVzZXIGOwBGWwZpC0kiIiQyYSQxMCQvQjZDcFZuZk5aMFJucmYvb0NkNi5PBjsAVA%3D%3D--6f077baf0d1425ecc28b6e3076f6c50c945ccba2; path=/; HttpOnly
+X-Request-Id: 6b1ab0d717d77ffb4139c455b7c23539
+X-Runtime: 0.099220
+Connection: close
+```
+
+```json
+{
+  "success":true,
+  "auth_token":"bwSnTTkYGrVJvpuuvLPq",
+  "username":"test",
+  "email":"test@test.com"
+}
+```
