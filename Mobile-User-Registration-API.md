@@ -20,7 +20,7 @@ Send parameters as a JSON object, not urlencoded.
 
 **Example with curl:**
 
-```curl
+```bash
 curl -i \
 -H 'Accept: application/json' \
 -H 'Content-Type: application/json' \
