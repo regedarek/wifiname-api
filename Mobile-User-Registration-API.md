@@ -10,6 +10,25 @@ A successful authentication request will return a hash with the user's account i
 
 **Important!** Previously, there was one token per app that was used to authenticate all API requests. Since we now have mobile user accounts, that auth token should only be used to for the API calls described on this page. When a user is registered or signed in successfully, the response contains an ``authentication_token``. That token should be used to authenticate API requests on behalf of the user, so we can track what they do.
 
+### Headers
+
+Set ``Content-Type`` and ``Accept`` to ``application/json``.
+
+### Sending parameters
+
+Send parameters as a JSON object, not urlencoded.
+
+**Example with curl:**
+
+```curl
+curl -i \
+-H 'Accept: application/json' \
+-H 'Content-Type: application/json' \
+-X POST \
+-d '{ "mobile_user": { "email": "anton@zolotov.eu", "username": "azolotov", "password": "testtest", "password_conformation": "testtest" }, "token":"authtoken" }' \
+https://app.wifiname.com/api/v1/mobile_users.json
+```
+
 ## Register a new user
 
 ``POST /api/v1/mobile_users.json``
