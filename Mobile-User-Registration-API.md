@@ -22,7 +22,7 @@ A successful authentication request will return a hash with the user's account i
     "email": "test@test.com",
     "username": "test",
     "password": "testtest",
-    "password_conformation": "testtest"
+    "password_confirmation": "testtest"
   },
 
   "token":"authtoken"
