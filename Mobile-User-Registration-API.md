@@ -18,7 +18,7 @@ A successful authentication request will return a hash with the user's account i
 
 ```json
 {
-  "mobile_user": {
+  "user": {
     "email": "test@test.com",
     "username": "test",
     "password": "testtest",
@@ -70,7 +70,7 @@ POST /api/v1/mobile_users/sign_in.json
 #### Parameters
 ```json
 {
-  "mobile_user_login":{
+  "user":{
     "username":"test",
     "password":"testtest"
   },
@@ -111,5 +111,35 @@ HTTP/1.1 401 Unauthorized
 {
   "success":false,
   "message":"Error with your login or password"
+}
+```
+
+## Sign Out
+
+You must sign out to reset the user's token.
+
+```
+DELETE /api/v1/mobile_users/sign_out.json
+```
+
+#### Parameters
+```json
+{
+  "user":{
+    "username":"test",
+  },
+  "token":"authtoken"
+}
+```
+
+#### Successful Request
+```
+HTTP/1.1 200 OK
+```
+
+```json
+{
+  "success":true,
+  "message":"Signed out successfully!"
 }
 ```
