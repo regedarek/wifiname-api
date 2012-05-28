@@ -25,7 +25,7 @@ curl -i \
 -H 'Accept: application/json' \
 -H 'Content-Type: application/json' \
 -X POST \
--d '{ "mobile_user": { "email": "anton@zolotov.eu", "username": "azolotov", "password": "testtest", "password_conformation": "testtest" }, "token":"authtoken" }' \
+-d '{ "mobile_user": { "email": "anton@zolotov.eu", "username": "azolotov", "password": "testtest", "password_confirmation": "testtest" }, "token":"authtoken" }' \
 https://app.wifiname.com/api/v1/mobile_users.json
 ```
 
