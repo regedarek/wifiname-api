@@ -2,7 +2,7 @@
 
 ## Authentication
 
-You need to supply a ``token`` parameter for authentication. Contact [Anton Zolotov](mailto:anton@zolotov.eu) to request a token.
+You need to supply a ``token`` parameter for authentication. Contact [Developer Relations](mailto:dev.relations@radius-networks.com) to request a token.
 
 ## Pinned Contents
 
