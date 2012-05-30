@@ -25,6 +25,7 @@ You can create a pinned content by posting these attributes:
 * ``pinned_content[long]``: Longitude of the phone. *optional*
 * ``pinned_content[content_type]``: Type of the content being pinned.
 * ``pinned_content[content_value]``: Value of the content being pinned.
+* ``pinned_content[content_title]``: Title.
 
 #### Example
 
@@ -35,6 +36,7 @@ $ curl -d "token=your_token" \
 -d "pinned_content[device_mac]=1" \
 -d "pinned_content[content_type]=facebook_url" \
 -d "pinned_content[content_value]=500" \
+-d "pinned_content[content_title]=test" \
 http://app.wifiname.com/api/v1/pinned_contents.json
 ```
 
@@ -42,6 +44,7 @@ http://app.wifiname.com/api/v1/pinned_contents.json
 {
    "content_type":"facebook_url",
    "content_value":"500",
+   "content_title":"Test",
    "created_at":"2012-03-11T18:09:59Z",
    "device_mac":"1",
    "id":1,
@@ -84,6 +87,7 @@ http://app.wifiname.com/api/v1/pinned_contents/by_ssid_and_mac.json
   {
     "content_type":"facebook_url",
     "content_value":"500",
+    "content_title":"test",
     "created_at":"2012-03-11T18:09:59Z",
     "device_mac":"1",
     "id":1,
@@ -97,6 +101,7 @@ http://app.wifiname.com/api/v1/pinned_contents/by_ssid_and_mac.json
   {
     "content_type":"facebook_url",
     "content_value":"500",
+    "content_title":"test",
     "created_at":"2012-03-11T18:26:44Z",
     "device_mac":"1",
     "id":2,
@@ -110,6 +115,9 @@ http://app.wifiname.com/api/v1/pinned_contents/by_ssid_and_mac.json
   {
     "content_type":"facebook_url",
     "content_value":"500",
+    "content_title":"test",
+    "created_at":"2012-03-11T18:26:44Z",
+    "content_title":"test",
     "created_at":"2012-03-11T18:27:48Z",
     "device_mac":"1",
     "id":3,
@@ -123,6 +131,8 @@ http://app.wifiname.com/api/v1/pinned_contents/by_ssid_and_mac.json
   {
     "content_type":"facebook_url",
     "content_value":"500",
+    "content_title":"test",
+    "created_at":"2012-03-11T18:26:44Z",
     "created_at":"2012-03-11T18:27:48Z",
     "device_mac":"1",
     "id":4,
@@ -136,6 +146,8 @@ http://app.wifiname.com/api/v1/pinned_contents/by_ssid_and_mac.json
   {
     "content_type":"facebook_url",
     "content_value":"500",
+    "content_title":"test",
+    "created_at":"2012-03-11T18:26:44Z",
     "created_at":"2012-03-11T18:27:49Z",
     "device_mac":"1",
     "id":5,
@@ -178,6 +190,7 @@ http://app.wifiname.com/api/v1/pinned_contents/close_and_recent.json
       {
          "content_type":"url",
          "content_value":"http://www.web.de",
+         "content_title":"test",
          "created_at":"2012-03-11T18:33:46Z",
          "device_mac":"1",
          "id":6,
@@ -191,6 +204,7 @@ http://app.wifiname.com/api/v1/pinned_contents/close_and_recent.json
       {
          "content_type":"facebook_url",
          "content_value":"500",
+         "content_title":"test",
          "created_at":"2012-03-11T18:27:49Z",
          "device_mac":"1",
          "id":5,
@@ -204,6 +218,7 @@ http://app.wifiname.com/api/v1/pinned_contents/close_and_recent.json
       {
          "content_type":"facebook_url",
          "content_value":"500",
+         "content_title":"test",
          "created_at":"2012-03-11T18:27:48Z",
          "device_mac":"1",
          "id":4,
@@ -217,6 +232,7 @@ http://app.wifiname.com/api/v1/pinned_contents/close_and_recent.json
       {
          "content_type":"facebook_url",
          "content_value":"500",
+         "content_title":"test",
          "created_at":"2012-03-11T18:27:48Z",
          "device_mac":"1",
          "id":3,
@@ -230,6 +246,7 @@ http://app.wifiname.com/api/v1/pinned_contents/close_and_recent.json
       {
          "content_type":"facebook_url",
          "content_value":"500",
+         "content_title":"test",
          "created_at":"2012-03-11T18:26:44Z",
          "device_mac":"1",
          "id":2,
@@ -243,6 +260,7 @@ http://app.wifiname.com/api/v1/pinned_contents/close_and_recent.json
       {
          "content_type":"facebook_url",
          "content_value":"500",
+         "content_title":"test",
          "created_at":"2012-03-11T18:09:59Z",
          "device_mac":"1",
          "id":1,
@@ -258,6 +276,7 @@ http://app.wifiname.com/api/v1/pinned_contents/close_and_recent.json
       {
          "content_type":"url",
          "content_value":"http://www.web.de",
+         "content_title":"test",
          "created_at":"2012-03-11T18:33:46Z",
          "device_mac":"1",
          "id":6,
