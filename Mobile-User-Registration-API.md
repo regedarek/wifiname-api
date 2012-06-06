@@ -105,6 +105,18 @@ POST /api/v1/users/sign_in.json
 }
 ```
 
+or
+
+```json
+{
+  "user":{
+    "email":"test@test.com",
+    "password":"testtest"
+  },
+  "token":"authtoken"
+}
+```
+
 #### Successful Request
 
 ```
