@@ -90,6 +90,10 @@ HTTP/1.1 422 Unprocessable Entity
 ```
 
 ## Log In an Existing User
+
+You can log in a user either with a a username and password or an email
+and password.
+
 ```
 POST /api/v1/users/sign_in.json
 ```
