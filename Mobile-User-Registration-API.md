@@ -6,9 +6,17 @@ The registration API allows mobile apps to:
 
 2. Sign users in
 
-A successful authentication request will return a hash with the user's account information, including the token to authenticate further API requests on behalf of the user.
+A successful authentication request will return a hash with the user's
+account information, including the token to authenticate further API
+requests on behalf of the user.
 
-**Important!** Previously, there was one token per app that was used to authenticate all API requests. Since we now have mobile user accounts, that auth token should only be used to for the API calls described on this page. When a user is registered or signed in successfully, the response contains an ``authentication_token``. That token should be used to authenticate API requests on behalf of the user, so we can track what they do.
+**Important!** Previously, there was one token per app that was used to
+authenticate all API requests. Since we now have user accounts, that
+auth token should only be used to for the API calls described on this
+page. When a user is registered or signed in successfully, the response
+contains an ``authentication_token``. That token should be used to
+authenticate API requests on behalf of the user, so we can track what
+they do.
 
 ### Headers
 
@@ -25,19 +33,19 @@ curl -i \
 -H 'Accept: application/json' \
 -H 'Content-Type: application/json' \
 -X POST \
--d '{ "mobile_user": { "email": "anton@zolotov.eu", "username": "azolotov", "password": "testtest", "password_confirmation": "testtest" }, "token":"authtoken" }' \
-https://app.wifiname.com/api/v1/mobile_users.json
+-d '{ "user": { "email": "anton@zolotov.eu", "username": "azolotov", "password": "testtest", "password_confirmation": "testtest" }, "token":"zUF7uZxxe8LiisF6s958" }' \
+https://app.wifiname.com/api/v1/users.json
 ```
 
 ## Register a new user
 
-``POST /api/v1/mobile_users.json``
+``POST /api/v1/users.json``
 
 #### Paramaters
 
 ```json
 {
-  "mobile_user": {
+  "user": {
     "email": "test@test.com",
     "username": "test",
     "password": "testtest",
@@ -83,13 +91,13 @@ HTTP/1.1 422 Unprocessable Entity
 
 ## Log In an Existing User
 ```
-POST /api/v1/mobile_users/sign_in.json
+POST /api/v1/users/sign_in.json
 ```
 
 #### Parameters
 ```json
 {
-  "mobile_user":{
+  "user":{
     "username":"test",
     "password":"testtest"
   },
@@ -138,13 +146,13 @@ HTTP/1.1 401 Unauthorized
 You must sign out to reset the user's token.
 
 ```
-DELETE /api/v1/mobile_users/sign_out.json
+DELETE /api/v1/users/sign_out.json
 ```
 
 #### Parameters
 ```json
 {
-  "mobile_user":{
+  "user":{
     "username":"test",
   },
   "token":"authtoken"
@@ -160,5 +168,37 @@ HTTP/1.1 200 OK
 {
   "success":true,
   "message":"Signed out successfully!"
+}
+```
+
+## Update User
+
+```
+PUT /api/v1/users/:token.json
+```
+
+where ``:token`` is the user's authentication token.
+
+#### Parameters
+```json
+{
+  "user":{
+    "username":"test",
+  },
+  "token":"authtoken"
+}
+```
+
+#### Successful Request
+```
+HTTP/1.1 200 OK
+```
+
+```json
+{
+  "success":true,
+  "auth_token":"bwSnTTkYGrVJvpuuvLPq",
+  "username":"test",
+  "email":"test@test.com"
 }
 ```
