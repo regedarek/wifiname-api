@@ -48,6 +48,8 @@ https://app.wifiname.com/api/v1/users.json
   "user": {
     "email": "test@test.com",
     "username": "test",
+    "first_name": "Bob",
+    "last_name": "Marley",
     "password": "testtest",
     "password_confirmation": "testtest"
   },
