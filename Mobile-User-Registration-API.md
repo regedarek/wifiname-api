@@ -29,35 +29,35 @@ they do.
   </thead>
   <tbody>
     <tr>
-      <td>``GET /pin_targets``</td>
+      <td>GET /pin_targets</td>
       <td>ApiUser or User</td>
     </tr>
     <tr>
-      <td>``POST /pinned_contents``</td>
+      <td>POST /pinned_contents</td>
       <td>User</td>
     </tr>
     <tr>
-      <td>``GET /pinned_contents/by_ssid_and_mac``</td>
+      <td>GET /pinned_contents/by_ssid_and_mac</td>
       <td>ApiUser or User</td>
     </tr>
     <tr>
-      <td>``GET /pinned_contents/close_and_recent``</td>
+      <td>GET /pinned_contents/close_and_recent</td>
       <td>ApiUser or User</td>
     </tr>
     <tr>
-      <td>``POST /users``</td>
+      <td>POST /users</td>
       <td>ApiUser</td>
     </tr>
     <tr>
-      <td>``POST /users/sign_in``</td>
+      <td>POST /users/sign_in</td>
       <td>ApiUser</td>
     </tr>
     <tr>
-      <td>``POST /users/sign_out``</td>
+      <td>POST /users/sign_out</td>
       <td>ApiUser</td>
     </tr>
     <tr>
-      <td>``PUT /users/:token``</td>
+      <td>PUT /users/:token</td>
       <td>User</td>
     </tr>
   </tbody>
