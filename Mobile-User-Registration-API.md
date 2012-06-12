@@ -18,6 +18,51 @@ contains an ``authentication_token``. That token should be used to
 authenticate API requests on behalf of the user, so we can track what
 they do.
 
+## API Endpoints and Required Users
+
+<table>
+  <thead>
+    <tr>
+      <th>Endpoint</th>
+      <th>Required User</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>``GET /pin_targets``</td>
+      <td>ApiUser or User</td>
+    </tr>
+    <tr>
+      <td>``POST /pinned_contents``</td>
+      <td>User</td>
+    </tr>
+    <tr>
+      <td>``GET /pinned_contents/by_ssid_and_mac``</td>
+      <td>ApiUser or User</td>
+    </tr>
+    <tr>
+      <td>``GET /pinned_contents/close_and_recent``</td>
+      <td>ApiUser or User</td>
+    </tr>
+    <tr>
+      <td>``POST /users``</td>
+      <td>ApiUser</td>
+    </tr>
+    <tr>
+      <td>``POST /users/sign_in``</td>
+      <td>ApiUser</td>
+    </tr>
+    <tr>
+      <td>``POST /users/sign_out``</td>
+      <td>ApiUser</td>
+    </tr>
+    <tr>
+      <td>``PUT /users/:token``</td>
+      <td>User</td>
+    </tr>
+  </tbody>
+</table>
+
 ### Headers
 
 Set ``Content-Type`` and ``Accept`` to ``application/json``.
