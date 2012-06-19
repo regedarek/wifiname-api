@@ -53,7 +53,7 @@ they do.
       <td>ApiUser</td>
     </tr>
     <tr>
-      <td>POST /users/sign_out</td>
+      <td>DELETE /users/sign_out</td>
       <td>ApiUser</td>
     </tr>
     <tr>
