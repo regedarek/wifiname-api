@@ -57,6 +57,20 @@ http://app.wifiname.com/api/v1/pinned_contents.json
 }
 ```
 
+### Send image
+
+You can send a image in two formats: as remote url or base64 string.
+Just create a PinnedContent with ``content_type``image`` and ``content_value`` with a valid url or base64 string
+
+```
+curl -i \
+-H 'Accept: application/json' \
+-H 'Content-Type: application/json' \
+-X POST \
+-d '{ "pinned_content": {"ssid": "your_ssid", "content_type": "image", "content_value": "string_of_image_in_base64_format"}, "token": "your_token" }' \
+http://wifiname.com/api/v1/pinned_contents.json
+```
+
 ### Retrieving Pinned Contents for SSIDs and MACs
 
 ```
